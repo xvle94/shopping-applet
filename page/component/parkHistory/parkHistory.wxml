@@ -1,0 +1,18 @@
+<view class="main">
+     <view wx:if="{{park.length > 0}}">
+          <view class="pay-content"  wx:for="{{park}}" >
+               <view>
+                <text class="name">停车地点:</text> <text class="text-left" wx:if="{{item.parkName!=null}}">{{item.parkName}}</text><text class="text-left" wx:else></text>
+               </view>
+               <view> <text class="name">车牌号:</text> <text class="text-left">{{item.carNum}}</text></view>
+               <view><text class="name">入场时间:</text> <text class="text-left">{{item.indt}}</text></view>
+               <view><text class="name">停车时长:</text> <text class="text-left">{{item.stopTime}}</text></view>
+               <view>
+               <text class="name">停车收费:</text> <text class="text-left" wx:if="{{item.payAmount!=null}}">{{item.payAmount}}</text><text class="text-left" wx:else></text>
+               </view>
+          </view>
+     </view>
+     <view wx:elif="{{park.length == 0}}">
+          <view class="pay-content" style="text-align:center">暂无数据</view>
+     </view>
+</view>

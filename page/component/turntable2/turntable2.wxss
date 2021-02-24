@@ -1,0 +1,58 @@
+/* page/component/turntable2/turntable2.wxss */
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background: url("https://erbu.fyitgroup.net/appletImg/luckDraw.png") no-repeat center center/cover; */
+}
+.canvas{
+  position: absolute;
+  top: 18%;
+  width: 600rpx;
+  height: 600rpx;
+}
+.canvas>canvas{
+  z-index: 0;
+}
+.start{
+  height: 112px;
+  width: 90px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  margin-left: -45px;
+  margin-top: -66px;
+  z-index: 2;
+}
+.rule{
+  width: 80%;
+  margin: 0 auto;
+  color: #fff;
+  position: absolute;
+  bottom: 100rpx;
+  left: 10%;
+}
+.richText{
+  width: 80%;
+  font-size: 12px;
+  line-height: 50rpx;
+}
+.rule text{
+  display: block;
+  text-align: center;
+  margin: 0 auto 20rpx auto;
+}
+.history{
+  color: #30BCE9;
+  font-size: 14px;
+  position: absolute;
+  bottom: 30rpx;
+  width: 100%;
+  text-align: center;
+}
+.integral{
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}

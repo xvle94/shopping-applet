@@ -1,0 +1,74 @@
+<!-- <view class="main">
+    <view class="goods-box">
+        <image src="https://erbu.fyitgroup.net/appletImg/image{{goods.image}}" class="goods-thumb"></image>
+        
+        <navigator open-type="switchTab" url="../cart/cart">
+            <view class="carts-icon {{scaleCart?'on':''}}">
+                <image src="https://erbu.fyitgroup.net/appletImg/image/cart2.png"></image>
+                <text class="carts-icon-num" wx:if="{{hasCarts}}">{{totalNum}}</text>
+            </view>
+        </navigator>
+        
+        <view class="goods-operation">
+            <text class="goods-operation-num">数量  {{num}}</text>
+            <text class="goods-operation-add" bindtap="addCount">+</text>
+            <text class="goods-to-cart" bindtap="addToCart">加入购物车</text>
+            <image src="https://erbu.fyitgroup.net/appletImg/image/cart1.png"  class="goods-cart-img" bindtap="addToCart"></image>
+        </view>
+        <image wx:if="{{show}}" src="/image/cart1.png" class="to-carts-icon"></image>
+        <view class="goods-stock">{{goods.stock}}</view>
+        <view class="goods-title">{{goods.title}}</view>
+        <view class="goods-price">￥ {{goods.price}}</view>
+    </view>
+    <view class="goods-tab-box">
+        <view class="goods-tab-nav {{curIndex === 0 ?'on':''}}" bindtap="bindTap" data-index="0">商品详情</view>
+        <view class="goods-tab-nav {{curIndex === 1 ?'on':''}}" bindtap="bindTap" data-index="1">产品参数</view>
+        <view class="goods-tab-nav {{curIndex === 2 ?'on':''}}" bindtap="bindTap" data-index="2">售后保障</view>
+        <view class="goods-content">
+            <view wx:if="{{curIndex === 0}}">{{goods.detail}}</view>
+            <view wx:if="{{curIndex === 1}}">{{goods.parameter}}</view>
+            <view wx:if="{{curIndex === 2}}">{{goods.service}}</view>
+        </view>
+    </view>
+</view> -->
+<view class="main">
+    <view class="goods-box">
+        <image src="{{imgheader}}{{goods.thumbnail}}" class="goods-thumb {{scaleCart?'on':''}}"></image>
+        <text class="g-detail">{{goods.goodsName}}</text>
+        <text class="g-price">￥{{goods.newMoney}}</text>
+    </view>
+    <!-- <view class="shop-box" bindtap="goShopInfo">
+        <image src="https://erbu.fyitgroup.net/appletImg/image/product/icon-shop.png"/>
+        <view class="shop-title">
+            <text class="shop-name">{{goods.shopsName}}</text>
+            <text class="shop-entry">进入店铺</text>
+        </view>
+    </view> -->
+    <!-- <view class="goods-tab-box">
+       <text>商品介绍</text>
+       <view>{{goods.introduce}}</view>
+    </view> -->
+    <view class="goods-tab-box">
+       <text class="title">图文详情</text>
+       <text wx:if="{{goods.introduce==null}}"></text>
+       <text class="detail" wx:else>{{goods.introduce}}</text> 
+       <view wx:for="{{detailMap}}">
+        <image mode="widthFix" src="{{imgheader}}{{item}}"/>
+       </view>
+    </view>
+    <view class="goods-operation">
+        <!-- <view class="opera-shop" bindtap="goShopInfo">
+            <image src="https://erbu.fyitgroup.net/appletImg/image/product/icon1.png"></image>
+            <text>店铺</text>
+        </view> -->
+        <view bindtap="goCart" class="opera-cart">
+            <image src="https://erbu.fyitgroup.net/appletImg/image/product/icon2.png"></image>
+             <text class="carts-icon-num" wx:if="{{hasCarts}}">{{totalNum}}</text>
+            <text>购物车</text>
+        </view>
+        <view class="opera-buy">
+            <text class="btn-cart" bindtap="addToCart">加入购物车</text>
+            <text class="btn-buy" bindtap="addOrder" data-pid="{{goods.id}}" data-sid="{{goods.shopsId}}">立即购买</text>
+        </view>
+    </view>
+</view>

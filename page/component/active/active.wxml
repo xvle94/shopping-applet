@@ -1,0 +1,10 @@
+<!--page/component/active/active.wxml-->
+<view class="mian">
+    <view class="active-list" wx:for="{{active}}" wx:key="{{index}}">
+      <view bindtap='jumpToType' data-item='{{item}}'>
+      <!-- src="{{imgheader}}{{item.imgUrl}}" -->
+        <image src="{{listIndex > index ? 'https://erbu.fyitgroup.net/appletImg/upload/'+item.imgUrl : '' }}" lazy-load="true" class="pic {{listIndex > index ?'Action':''}}"></image>
+        <text>{{item.title}}</text>
+      </view>
+    </view>
+</view>

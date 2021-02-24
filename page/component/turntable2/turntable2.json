@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "幸运大转盘",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}

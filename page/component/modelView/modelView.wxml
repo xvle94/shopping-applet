@@ -1,0 +1,4 @@
+<!--page/component/modelView/modelView.wxml-->
+<view class="imagesize">
+  <image src="{{qrCodeUrl}}"></image>
+</view>

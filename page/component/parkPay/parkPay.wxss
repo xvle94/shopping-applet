@@ -1,0 +1,65 @@
+@import '../../common/common.wxss';
+.pay-head{
+  background: #EA5340;
+  padding: 0 25rpx;
+  display: flex;
+  align-items: center;
+  height: 230rpx;
+}
+.pay-head image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;  
+}
+.pay-head .info{
+  display:inline-block;
+  margin-left: 25rpx;
+}
+.pay-head .info text{
+  display: block;
+  font-size: 28rpx;
+  color: #fff;
+  margin-bottom: 6rpx;
+}
+.pay-content{
+  margin: 20rpx 40rpx;
+  border: 1px solid #CFCFCF;
+  padding: 20rpx;
+  border-radius: 8rpx;
+}
+.pay-content view{
+  margin: 5rpx 0;
+}
+.pay-content .name{
+  font-size: 28rpx;
+  text-align: left;
+  width: 24%;
+  display: inline-block;
+}
+.pay-content .text-left{
+  font-size: 28rpx;
+  width:76%;
+  display: inline-block;
+}
+.pay-footer{
+  margin: 40rpx;
+}
+.pay-footer .section{
+  margin: 20rpx;
+}
+.pay-footer .radio{
+ display: block;
+ margin-top: 15rpx;
+}
+.pay-footer button{
+  background: #d81e06;
+  color: #fff;
+  margin-top: 60rpx;
+}
+.pay-footer .payment{
+  text-align: right;
+}
+.pay-footer .payment .price{
+  color: #E49609;
+  font-size: 50rpx;
+}

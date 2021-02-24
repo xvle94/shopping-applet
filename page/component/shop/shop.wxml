@@ -1,0 +1,10 @@
+<view class="main">
+    <view wx:for="{{shop}}" wx:key="{{index}}" class="shop-list">
+      <image src="{{imgheader + item.logoUrl}}"></image>
+      <view class="shop-txt">
+        <navigator url="../list/list?id={{item.id}}"><text class="shop-name">{{item.name}}</text> <text class="shop-entry">进店</text></navigator>
+        <text class="shop_text" wx:if="{{item.introduce != null}}">{{item.introduce}}</text>
+        <text class="shop-content" wx:if="{{item.introduce == null}}">暂无介绍</text>
+      </view>
+    </view>
+</view>

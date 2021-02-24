@@ -1,0 +1,58 @@
+<!--page/component/order2/order2.wxml-->
+<view class="mian">
+    <view class="orders-box" wx:if="{{hasList}}">
+        <view wx:for="{{orders}}" wx:key="id" class="orders-list">
+            <view class="orders-head">
+                <text class="shopName" wx:if="{{item.shopsName==null}}"></text>
+                <text class="shopName" wx:else>{{item.shopsName}}</text>
+            </view>
+
+            <view wx:for="{{item.productList}}" wx:for-index="idx">
+              <text class="orderNum">订单编号{{item.subOrderNo}}</text>
+              <view class="orders-content">
+                <image class="orders-thumb" src="{{imgheader}}{{item.thumbnail}}"></image>
+                <view class="orders-pro-name">{{item.goodsName}}</view>
+                <view class="orders-pro-detail">
+                    <text class="orders-pro-price">￥{{item.goodsPrice/100}}</text>
+                    <text class="orders-count-num">×{{item.goodsNum}}</text>
+                </view>
+              </view>
+            </view>
+
+             <view class="status-list">
+                <view class="orders-foot delivery" wx:if="{{status === 'os_002'}}">
+                  <view>
+                    <text class="left">门店地址：</text> 
+                    <text class="shopsAddress" wx:if="{{item.productList[0].shopsAddress==null}}">暂无门店地址</text>
+                    <text class="shopsAddress" wx:elif='{{item.productList[0].shopsAddress==""}}'>暂无门店地址</text>
+                    <text class="shopsAddress" wx:else>{{item.productList[0].shopsAddress}}</text>
+                  </view>
+                  <view class="code-view"> 
+                    <text class="left">取货码:</text> 
+                    <text class="deliveryCode"> {{item.productList[0].deliveryCode}}</text>
+                    <!-- 取货-->
+                    <navigator url="../modelView/modelView?subOrderNo={{item.productList[0].subOrderNo}}">
+                      <button  size="mini" plain="true">取货</button>
+                    </navigator>
+                    <!-- 取货-->
+                  </view>
+                </view>
+                <view class="orders-foot payment" wx:elif="{{status === 'os_001'}}">
+                    <text class="pay-title">共{{item.total}}件商品 合计：</text>
+                    <text class="pay-price">￥{{item.price}}</text>
+                    <navigator url="../orders/orders?orderNo={{item.orderNo}}"><text class="pay-btn">付款</text></navigator>
+                    <text bindtap="cancelOrder" data-orderno='{{item.orderNo}}' class="cancel-btn">取消</text>
+                </view>
+                <view class="orders-foot received" wx:elif="{{status === 'os_004'}}">
+                  <text wx:if="{{item.productList[0].courierName==null || item.productList[0].courierNumber==null}}">物流信息：暂无</text>
+                  <text wx:else>物流信息：{{item.productList[0].courierName}}:{{item.productList[0].courierNumber}}</text>
+                </view>
+                <view wx:else></view>
+              </view>  
+
+        </view>
+    </view>
+    <view class="null-box text-center"  wx:else>
+        <image src="https://erbu.fyitgroup.net/appletImg/noInfo.png"></image>
+     </view>
+</view>

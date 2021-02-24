@@ -1,0 +1,80 @@
+/* page/component/squeegee/squeegee.wxss */
+.main{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.canvasPage{
+  position: relative;
+  top: 40%;
+  background: url(../../../image/canvasBg.png) no-repeat center;
+}
+canvas{
+  position: absolute;
+  left: 10%;
+  top: 0;
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+  z-index: 10;
+}
+image{
+  margin: 0 auto;
+  width: 300px;
+  height: 100px;
+}
+
+.award{
+  width: 80%;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  color: #FBD211;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+button{
+  width: 50%;
+  margin: 60rpx auto;
+}
+.canvasBg{
+  margin: 0 auto;
+  width: 84%;
+  height: 59%;
+  position: absolute;
+  top: -7%;
+  left: 8%;
+  z-index: 1;
+}
+.rule{
+  width: 80%;
+  margin: 0 auto;
+  color: #473402;
+  position: absolute;
+  bottom: 100rpx;
+  left: 10%;
+}
+.richText{
+  width: 80%;
+  font-size: 12px;
+  line-height: 50rpx;
+}
+.rule text{
+  display: block;
+  text-align: center;
+  margin: 0 auto 20rpx auto;
+}
+.history{
+  color: #30BCE9;
+  font-size: 14px;
+  position: absolute;
+  bottom: 30rpx;
+  width: 100%;
+  text-align: center;
+}
+.integral{
+  color: #473402;
+  font-size: 14px;
+  text-align: center;
+}

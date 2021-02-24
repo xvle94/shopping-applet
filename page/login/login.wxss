@@ -1,0 +1,27 @@
+page {
+  /* background: #FEE05C; */
+  text-align: center;
+}
+.login-btn{
+  background-color: #E13C3C;
+  color: #fff;
+  margin:200rpx 40rpx 0 40rpx;
+}
+.login-logo image{
+  width: 135rpx;
+  height:135rpx;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  margin-top: 200rpx;
+  margin-bottom: 20rpx;
+}
+.login-logo text{
+  font-size: 38rpx;
+  margin-top: 10rpx;
+}
+.cancelLogin{
+  margin-top: 35rpx;
+  display: inline-block;
+  color: #5763AD;
+}

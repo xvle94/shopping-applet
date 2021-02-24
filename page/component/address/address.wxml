@@ -1,0 +1,18 @@
+
+<view class="main">
+    <view class="address-list" data-index="{{index}}" wx:for="{{address}}" wx:key="{{index}}" bindtap="getid" data-id="{{item.id}}">
+        <view class="ads-left">
+            <text class="ads-name">{{item.contactName}}</text> 
+            <text class="ads-phone">{{item.contactPhone}}</text>
+            <text class="ads-detail">{{item.province}}{{item.city}}{{item.county}}{{item.detailedAddress}}</text>
+        </view>
+        <view class="ads-right">
+             <view catchtap="goAddressEdit" data-id="{{item.id}}"> <text>编辑</text></view>
+        </view>
+    </view>
+    <navigator url="/page/component/addAddress/addAddress">
+        <view class="address-add">
+            <text>+  添加新地址</text>
+        </view>
+    </navigator>
+</view>

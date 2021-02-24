@@ -1,0 +1,32 @@
+@import '../../common/common.wxss';
+.msg-list{
+  background: #fff;
+  border-top: 1px solid #F5F6F8;
+  padding: 15rpx 5rpx 15rpx 15rpx;
+  display: flex;
+  align-items: center;
+}
+.msg-list image{
+  width: 85rpx;
+  height: 85rpx;
+}
+.msg-txt{
+  display: inline-block;
+  width: 80%;  
+  padding-left: 10rpx;
+}
+.msg-txt .txt-title{
+  display: inline-block;
+  font-size: 30rpx;
+}
+.msg-txt .txt-content{
+  display: block;
+  font-size: 28rpx;
+  color: #C3C3C3;
+  font-size: 26rpx
+}
+.msg-txt .txt-time{
+  font-size: 28rpx;
+  float: right;
+  color: #c3c3c3;
+}

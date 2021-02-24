@@ -1,0 +1,216 @@
+@import '../../common/common.wxss';
+
+.orders-address{
+    position: relative;
+    padding: 20rpx 50rpx 20rpx 35rpx;
+    font-size: 14px;
+    line-height: 25px;
+    border-bottom: 20rpx solid #ededed;
+    color: #adadad;
+}
+.orders-address::after{
+    position: absolute;
+    right: 30rpx;
+    top: 60rpx;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-top: 4rpx solid #7f7f7f;
+    border-right: 4rpx solid #7f7f7f;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.orders-address-name{
+    display: inline-block;
+    width: 300rpx;
+}
+
+.orders-no-address{
+    position: relative;
+    height: 90rpx;
+    line-height: 90rpx;
+    color: #adadad;
+    border-bottom: 20rpx solid #ededed;
+    text-align: center;
+}
+.orders-no-address::after{
+    position: absolute;
+    right: 30rpx;
+    top: 34rpx;
+    content: '';
+    width: 16rpx;
+    height: 16rpx;
+    border-top: 4rpx solid #7f7f7f;
+    border-right: 4rpx solid #7f7f7f;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+.orders-list{
+    margin: 20rpx;
+    padding: 20rpx;
+    background: #fff;
+    border-radius: 15rpx;
+    /* height: 210rpx; */
+    border-bottom: 1rpx solid #ededed;
+}
+.orders-head .shopName{
+    font-size: 30rpx;
+    font-weight: 600;    
+}
+.orders-head .orderNum{
+    font-size: 27rpx;
+    float: right;
+    color: #C7C7C7;
+    margin-top: 5rpx;
+}
+.orders-thumb{
+    width: 160rpx;
+    height: 160rpx;    
+    border-radius: 12rpx;
+    box-shadow: 2px 2px 4px #E5E4E4;
+}
+.orders-content{
+    display: flex;
+    align-items: center;
+    margin-top: 15rpx;
+}
+.orders-pro-name{
+    display: inline-block;
+    width: 58%;
+    font-size: 28rpx;
+    padding-left: 15rpx;
+}
+.orders-pro-detail{
+    display: inline-block;
+    font-size: 30rpx;
+    margin-left: 40rpx;
+    text-align: right;
+}
+.orders-pro-detail .orders-pro-price{
+    display: block;
+    color: #d81e06;
+}
+.orders-pro-detail .orders-count-num{
+    display: block;
+    color: #C7C7C7;
+}
+.orders-footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 95rpx;
+    line-height: 95rpx;
+    border-top: 1rpx solid #ededed;
+    background: #fff;
+    z-index: 100;
+}
+.orders-footer .orders-footer-total{
+    display: inline-block;
+    width: 510rpx;
+    padding-left: 40rpx;
+    box-sizing: border-box;
+}
+.orders-footer .orders-footer-btn{
+    display: inline-block;
+    width: 240rpx;
+    text-align: center;
+    color: #fff;
+    background: #d81e06;
+}
+.orders-footer .total-price{
+    color: #d81e06;
+}
+
+.switch,.self-taking,.address,.freight,.pay{
+    margin: 20rpx;
+    padding: 30rpx 20rpx;
+    background: #fff;
+    border-radius: 15rpx;
+    font-size: 30rpx;
+}
+/* .address{
+    z-index: 1000;
+}
+.self-taking{
+    z-index: -1;
+} */
+.switch .btn-switch{
+    color: #C7C7C7;
+    border: 1px solid #C7C7C7;
+    padding: 4rpx 15rpx;
+    float: right;     
+    border-radius: 7rpx;
+    margin-left: 20rpx;
+}
+.switch .btn-switch.on{
+    color: #d81e06;
+    border: 1px solid #d81e06;
+    padding:4rpx 15rpx;
+    float: right;     
+    border-radius: 7rpx;
+    margin-left: 20rpx;
+}
+
+.address .more-ads{
+    float: right;
+    font-weight: 600;
+    width: 55rpx;
+    text-align: right;
+    height: 50rpx;
+}
+.address .address-bottom{
+    line-height: 50rpx;
+    border-top: 1px dashed #DADADA;
+    margin-top: 20rpx;
+    padding-top: 10rpx;
+}
+.address-bottom  .ads-phone{
+    margin-left: 15rpx;
+}
+.address-bottom  .ads-detail{
+    display: block;
+}
+.freight .f-price{
+    color: #d81e06;
+    float: right;
+}
+.s-address .shop-ads{
+    float: right;
+}
+.s-address,.s-people{
+    border-bottom: 1px solid #F1F1F1;
+    padding: 20rpx 0rpx;
+}
+.s-address,.s-phone{
+    padding: 20rpx 0rpx;
+}
+.s-people input,.s-phone input{
+    display: inline-block;
+    float: right;
+    text-align: right;
+    font-size: 26rpx;
+}
+.pay{
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+}
+.pay image{
+    width: 50rpx;
+    height: 50rpx;
+    float: right;
+}
+.pay-right text{
+    float: right;
+    margin-left: 10rpx;
+}
+.pay .pay-right{
+    display: inline-block;
+    width: 82%;
+}
+.ecpress .address-top navigator{
+    display: initial;
+}

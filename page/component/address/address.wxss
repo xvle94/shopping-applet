@@ -1,0 +1,50 @@
+@import '../../common/common.wxss';
+
+.address-list{
+    margin: 20rpx;
+    padding: 20rpx;
+    background: #fff;
+    border-radius: 15rpx;
+    border-bottom: 1rpx solid #ededed;
+    display: flex;
+    align-items: center;
+}
+.ads-left,.ads-right{
+    display: inline-block;
+}
+.ads-left{
+    width: 90%;
+}
+.address-list .ads-detail{
+    display: block;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}
+.ads-name,.ads-phone{
+    font-weight: 600;  
+    font-size: 30rpx;
+}
+.ads-phone{
+    margin-left: 20rpx;
+}
+.ads-right text{
+    font-size: 30rpx;
+    display: inline-block;
+    text-align: right;
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 90rpx;
+}
+.address-add{
+    margin: 40rpx 60rpx;
+    color: #ABABAB;
+    font-size: 30rpx;
+    text-align: center;
+    border: 1px dashed #ABABAB;
+    padding: 25rpx;
+    border-radius: 8rpx;
+}
+.active{
+    background:#51A938;
+    color: #fff;
+}

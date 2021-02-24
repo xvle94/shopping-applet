@@ -1,0 +1,4 @@
+<!--page/component/drawQrCode/drawQrCode.wxml-->
+<view class="imagesize">
+  <image src="{{qrCodeUrl}}"></image>
+</view>

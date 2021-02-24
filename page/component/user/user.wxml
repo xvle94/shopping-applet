@@ -1,0 +1,112 @@
+<view class="main">
+    <view class="header" wx:if="{{loginStatus}}">
+        <image src="https://erbu.fyitgroup.net/appletImg/image/user/bg.png" class="header-bg"></image>
+        <image src="https://erbu.fyitgroup.net/appletImg/image/user/vip.png" class="header-vip"></image>
+        <view class="userInfo">
+          <image src="{{avatarUrl}}" class="thumb"></image>
+         <text class="nickname">{{nickName}}</text>
+          <text>{{phoneNumber}}</text>
+        </view>
+       
+    </view>
+    <view class="header" wx:else>
+      <navigator url="/page/login/login">
+        <image src="https://erbu.fyitgroup.net/appletImg/image/user/bg.png" class="header-bg"></image>
+        <image src="https://erbu.fyitgroup.net/appletImg/image/user/vip.png" class="header-vip"></image>
+        <view class="userInfo">
+          <image src="/image/user.png" class="thumb"></image>
+          <text class="clickLogin">点击登录</text>
+        </view>
+      </navigator> 
+    </view>
+   
+    <view class="integral">
+      <text class="int-txt">已获积分</text>  
+      <navigator url="/page/component/integral/integral"> <text class="int-count">{{totalScore}}</text> </navigator> 
+      <view>
+        <text wx:if="{{signFlag}}" class="int-btn" bindtap="sign">签到</text>
+        <text wx:if="{{!signFlag}}" class="over-btn">已签到</text>
+      </view>
+    </view>
+
+    <view class="orders-box">
+      <view class="orders">
+        <navigator url="/page/component/order2/order2?status=os_001">
+          <view class="order-status">
+            <image src="https://erbu.fyitgroup.net/appletImg/image/user/oState1.png"/>
+            <text>待付款</text>
+            <text wx:if="{{os_001 === 0 || !loginStatus}}"></text>
+            <text class="num" wx:else>{{os_001}}</text>
+          </view>
+        </navigator>
+        <navigator url="/page/component/order2/order2?status=os_002">
+          <view class="order-status">
+            <image src="https://erbu.fyitgroup.net/appletImg/image/user/oState2.png"/>
+            <text>待取货</text>
+             <text wx:if="{{os_002 === 0 || !loginStatus}}"></text>
+            <text class="num" wx:else>{{os_002}}</text>
+          </view>
+        </navigator>
+        <navigator url="/page/component/order2/order2?status=os_003">
+          <view class="order-status">
+            <image src="https://erbu.fyitgroup.net/appletImg/image/user/oState3.png"/>
+            <text>待发货</text>
+             <text wx:if="{{os_003 === 0 || !loginStatus}}"></text>
+            <text class="num" wx:else>{{os_003}}</text>
+          </view>
+        </navigator>
+        <navigator url="/page/component/order2/order2?status=os_004">
+          <view class="order-status">
+            <image src="https://erbu.fyitgroup.net/appletImg/image/user/oState4.png"/>
+            <text>已发货</text>
+            <text wx:if="{{os_004 === 0 || !loginStatus}}"></text>
+            <text class="num" wx:else>{{os_004}}</text>
+          </view>
+        </navigator>
+      </view>
+    </view>
+
+    
+
+    <view class="address-box">
+      <view class="address-manage">
+          <navigator wx:if="{{loginStatus}}" url="/page/component/address/address"><image src="https://erbu.fyitgroup.net/appletImg/image/user/address.png"/>配送地址</navigator>
+          <navigator wx:else url="/page/login/login"><image src="https://erbu.fyitgroup.net/appletImg/image/user/address.png"/>配送地址</navigator>
+      </view>
+      <view class="address-manage">
+        <navigator wx:if="{{loginStatus}}" url="/page/component/parkHistory/parkHistory"><image src="/image/park.png"/>停车记录</navigator>
+        <navigator  wx:else url="/page/login/login"><image src="/image/park.png"/>停车记录</navigator>
+      </view>
+      <view class="address-manage" wx:if="{{scanningCode}}">
+        <navigator  bindtap='getScancode'><image src="/image/extract.png"/>扫码提货</navigator>
+      </view>
+      <view class="address-manage" wx:if="{{drawScanning}}">
+        <navigator  bindtap='getScancode'><image src="/image/extract.png"/>兑奖</navigator>
+      </view>
+      <view class="address-manage"  >
+        <navigator url="/page/component/raffleList/raffleList"><image src="/image/luckDraw.png"/>积分抽奖</navigator>
+      </view>
+      <view class="address-manage" >
+        <navigator url="/page/component/lotteryHistory/lotteryHistory"><image src="/image/jfHistory.png"/>抽奖历史</navigator>
+      </view>
+      <!-- <view class="address-manage">
+          <navigator url="/page/component/default/default"><image src="https://erbu.fyitgroup.net/appletImg/image/user/contact.png"/>联系我们</navigator>
+      </view>
+      <view class="address-manage">
+          <navigator url="/page/component/default/default"><image src="https://erbu.fyitgroup.net/appletImg/image/user/about.png"/>关于我们</navigator>
+      </view> -->
+    </view>
+
+    <view class="sign_out" wx:if="{{loginStatus}}">
+      <view bindtap="signOut">
+          退出登录
+      </view>
+    </view>
+    <view class="sign_out" wx:else>
+    </view>
+    
+    <view class="edition">
+      <text>版本1.3.6</text>   
+    </view>
+  
+</view>

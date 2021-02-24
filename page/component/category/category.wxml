@@ -1,0 +1,58 @@
+<view class="main">
+  <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:100%;" bindscrolltolower="bindDownLoad">
+    <view class="categroy-left">
+      <view class="search">
+          <navigator url="../search/search">
+              <view class="search-text">
+                  <icon class="weui-icon-search_in-box search-icon" type="search" size="14"></icon>
+                  搜索你想要的商品
+              </view>
+          </navigator>
+      </view>
+      <view class="categoty-title">
+        <!-- <view wx:for="{{category}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}"
+            bindtap="switchTab"
+            class="cate-list {{curIndex === index?'on':''}}">{{item.name}}</view> -->
+            <swiper duration="500" display-multiple-items="4" class="cate-list">
+              <block wx:for="{{category}}" wx:key="id">
+                <swiper-item>
+                  <view catchtap="switchTab" data-id="{{item.id}}" data-index="{{index}}" class="cate-list {{curIndex == index?'onSelect':''}}">{{item.name}}</view>
+                </swiper-item>
+              </block>
+            </swiper>
+      </view>
+    </view>
+    <view class="sort">
+        <!-- <view bindtap="sortFn"><text style="color:{{sortColor}};">默认</text> 
+        </view>
+        <view bindtap="sortFn"><text>价格</text> 
+        </view> -->
+        <block wx:for="{{sortList}}" data-index="index">
+          <view catchtap="sortFn" data-index="{{index}}">
+            <text class="{{sortIndex == index ? 'onSortColor' : ''}}">{{item.name}}</text>
+          </view>
+        </block>
+    </view>
+
+    <view class="newest">
+        <view class="newest-box" wx:if="{{product.length>0}}">
+            <scroll-view class="newest-list" wx:for="{{product}}" wx:key="{{index}}">
+              <navigator url="../details/details?id={{item.id}}&curIndex={{curIndex}}">
+                <view class="newest-up">
+                  <image class="product-img" src="{{imgheader}}{{item.thumbnail}}" lazy-load="true"></image>
+                </view>
+                <view class="newest-down">
+                  <view class="newest-text">
+                    <text class="newest-pname block">{{item.goodsName}}</text>
+                    <text id="unit">￥</text><text class="newest-price">{{item.newMoney}}</text>
+                  </view>
+                </view>
+              </navigator>
+            </scroll-view>
+        </view>
+        <view wx:else class="text-center">
+          <image src="/image/null-pro.png"></image>
+        </view>
+    </view>
+  </scroll-view>
+</view>

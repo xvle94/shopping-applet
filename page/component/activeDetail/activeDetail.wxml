@@ -1,0 +1,17 @@
+<!--page/component/activeDetail/activeDetail.wxml-->
+<import src="../../../util/wxParse/wxParse.wxml"/>
+<view class="main">
+    <view class="atv-head">
+    <image src="{{imgheader + active.imgUrl}}"></image>
+    <!-- <image wx:if="{{active.bannerUrl != null}}" src="{{imgheader + active.bannerUrl}}"></image> -->
+    </view>
+    <view class="atv-content">
+      <text class="atv-title">{{active.title}}</text>
+      <text class="atv-time">{{active.createTime}}</text>
+      <text class="atv-address">{{active.viewTimes}}</text>
+      <view>
+        <!-- <rich-text nodes="{{active.introduceString}}" class="text-center"></rich-text> -->
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+      </view>
+    </view>
+</view>

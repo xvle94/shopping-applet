@@ -1,0 +1,57 @@
+<!--page/component/parking/parking.wxml-->
+<view class="main">
+    <view class="drop-down">
+        <image src="https://erbu.fyitgroup.net/appletImg/image/index/position.png"></image>
+        <!-- <text>周浦缤纷广场</text> -->
+        <view class='list-msg2' bindtap='bindShowMsg'>
+          <text>{{tihuoWay}}</text>
+          <image style='height:20rpx;width:20rpx;' src='https://erbu.fyitgroup.net/appletImg/image/select.png'></image>
+        </view>
+        <view class="select_box" wx:if="{{select}}">
+          <view class="select_one" wx:for-items="{{queryList}}" wx:for-item="item" bindtap="mySelect" data-name="{{item.name}}" data-id="{{item.id}}">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="park-box">
+      <text class="box-title">请输入您的车牌号</text>
+      <view class="input-box">
+      <block wx:for="{{numberData}}" wx:key="{{item}}">
+      <!-- <input bindinput="bindKeyInput"  id="{{item.id}}" value="{{item.value}}"/> -->
+       <input disabled bindtap='onFocus' value="{{iptValue.length>=index+1?iptValue[index]:''}}"/>
+      <text class="spot" wx:if="{{index ==1}}"></text>
+      </block>
+        <view wx:if="{{showAdd}}" bindtap="addCase">
+          <text>+</text>
+          <text>新能源</text>
+        </view>
+      </view>
+     <button type="primary" bindtap="queryByCarNum">查询停车费</button>
+    </view>
+    <!-- <view class="search-history">
+        <text>沪AFB3785</text><text>沪AFB3785</text>
+    </view> -->
+    <!-- <view>
+      <view>
+         <image></image>
+        <text>我的车辆</text>
+      </view>
+      <view>
+         <image></image>
+         <text>缴费历史</text>
+      </view>
+      <view>
+        <image></image>
+        <text>缴费规则</text>
+      </view>
+      <view>
+        <image></image>
+        <text>常见问题</text>
+      </view>
+    </view> -->
+
+    <form>
+      <!-- <view class='ipt_box'>
+        <input type='number' wx:for="{{inputLen}}" wx:key="{{index}}" disabled bindtap='onFocus' value="{{iptValue.length>=index+1?iptValue[index]:''}}"/>
+      </view> -->
+      <input class='hidden_ipt' maxlength="{{numberData.length}}" focus="{{isFocus}}" bindinput="setValue"></input>
+    </form>
+</view>

@@ -1,0 +1,60 @@
+@import '../../common/common.wxss';
+.form-box input{
+  display: inline-block;
+  margin-left: 35rpx;
+}
+.form-box input{
+  display: inline-block;
+  margin-left: 35rpx;
+  width: 70%;
+}
+.form-top,.form-middle,.form-bottom{
+  background: #fff;
+  padding-left: 30rpx;
+  margin-bottom: 25rpx;
+}
+.form-top .item{
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1px solid #E5E5E5;
+}
+.form-top .last-view,.form-middle .last-view{
+  border: 0;
+}
+.form-box view text{
+  width: 20%;
+}
+.form-bottom{
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-right: 20rpx;
+}
+.form-box .sub-btn{
+  margin: 60rpx 30rpx 0 30rpx;
+  border-radius: 25px;
+  background: #51A938;
+  color: #fff;
+}
+.radio-box{
+  justify-content: center;
+}
+.radio-box radio{
+  margin: 0 30rpx;
+}
+.form-box .del-btn{
+  margin: 50rpx 30rpx 0 30rpx;
+  border-radius: 25px;
+  color: #fff;
+}
+/* .item .right text{
+  color:gray ;
+} */
+.item picker{
+  margin-left: 35rpx;
+  width: 70%;
+  line-height: 100rpx;
+}
+.picker{
+  display: flex;
+}

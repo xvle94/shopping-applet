@@ -1,0 +1,2 @@
+<!--page/component/poster/poster.wxml-->
+ <web-view src="{{thirdUrl}}"></web-view>

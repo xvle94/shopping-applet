@@ -1,0 +1,32 @@
+<view class="main">
+    <view class="search-box">
+        <input class="search-input" placeholder="搜索" value="{{value}}" bindinput="getCommodity" />
+        <icon class="weui-icon-search_in-box search-icon" type="search" size="14"></icon>
+        <text  bindtap="cancelSearch" class="cancel-btn">取消</text>
+        <!-- <text class="search-btn" wx:if="{{showResult}}" bindtap="cancelSearch">取消</text> -->
+    </view>
+    <view wx:if="{{showResult}}">
+        <view class="result-box" wx:if="{{product.length > 0}}">
+            <view class="newest-box">
+                <view class="newest-list" wx:for="{{product}}" wx:key="{{id}}">
+                    <navigator url="../details/details?id={{item.id}}">
+                        <view class="newest-up">
+                        <image class="product-img" src="{{imgheader}}{{item.thumbnail}}"></image>
+                        </view>
+                        <view class="newest-down">
+                        <view class="newest-text">
+                            <text class="newest-pname block">{{item.goodsName}}</text>
+                            <text id="unit">￥</text><text class="newest-price">{{item.newMoney}}</text>
+                        </view>
+                        </view>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+        <view class="result-null" wx:else>
+            <view class="null-tips">Oh~~ 搜索结果为空！</view>
+        </view>
+    </view>
+    <view  wx:else>
+    </view>
+</view>

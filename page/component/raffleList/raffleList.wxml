@@ -1,0 +1,14 @@
+<!--page/component/raffleList/raffleList.wxml-->
+<view class="mian">
+	<view wx:if="{{active.length > 0}}">
+		<view class="active-list" wx:for="{{active}}" wx:key="{{index}}">
+			<navigator url="{{item.drawType=='dt_001'?'../turntable2/turntable2?id='+item.id:'../squeegee/squeegee?id='+item.id}}">
+				<image src="{{listIndex > index ? 'https://erbu.fyitgroup.net/appletImg/upload/'+item.imgUrl : '' }}" lazy-load="true" class="pic {{listIndex > index ?'Action':''}}"></image>
+				<text>{{item.title}}</text>
+			</navigator>
+		</view>
+	</view>
+	<view wx:elif="{{active.length == 0}}">
+		<view class="history-list" style="text-align:center">暂无数据</view>
+	</view>
+</view>

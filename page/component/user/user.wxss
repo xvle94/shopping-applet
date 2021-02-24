@@ -1,0 +1,201 @@
+@import '../../common/common.wxss';
+
+.header{
+    height: 400rpx;
+    font-size: 28rpx;
+    color: #fff;
+    /* width: 100%;     */
+    margin: 0 40rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+.header .header-bg{
+    width: 100%;
+    height: 400rpx;     
+}
+.header .userInfo{
+    position: absolute;
+    top: 8%;
+    width: 92%;
+    text-align: center;
+}
+.header .thumb{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+}
+.header .nickname{
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    margin-top: 8rpx;
+    margin-bottom: 6rpx;
+    display: block;
+}
+.header .clickLogin{
+    display: block;
+    color: #fff;
+}
+.header .header-vip{
+    height: 68rpx;
+    width: 240rpx;
+    position: absolute;
+    left: 63%;
+    top: 11%;    
+}
+.address-box{
+    border-radius: 15rpx;
+    box-shadow: 3px 2px 3px #D8DADD;
+    color: black;
+    line-height: 90rpx;
+    font-size: 28rpx;
+    background: #fff;
+    margin:15px 20px 0px 20px 
+}
+.address-box .address-manage{
+    position: relative;
+    height: 90rpx;
+    border-bottom: 1rpx solid #e9e9e9;
+    text-align: left;
+    padding-left: 2px
+}
+.address-box .address-manage image{
+    height: 16px;
+    width: 16px;
+    margin:0 10px 0 10px;
+    vertical-align: middle
+}
+.address-box .address-manage::after{
+    position: absolute;
+    right: 30rpx;
+    top: 34rpx;
+    content: '';
+    width: 16rpx;
+    height: 16rpx;
+    border-top: 4rpx solid #7f7f7f;
+    border-right: 4rpx solid #7f7f7f;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.address-box .address-list{
+    padding-left: 30rpx;
+}
+.address-box .address-list view{
+    height: 90rpx;
+    border-bottom: 1rpx solid #e9e9e9;
+}
+.address-box .address-list view:last-child{
+    border-bottom: 0;
+}
+
+.integral{
+    background: #fff;
+    height: 130rpx;
+    margin: 10px 20px 0 20px;
+    border-radius: 15rpx;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 3px #d8dadd;
+}
+.integral .int-txt{
+   color: #BEBEBE;
+   margin-left: 45rpx;
+   font-size: 30rpx;
+}
+.integral .int-count{
+    border-bottom: 1px solid #F68C3E;
+    color: #F68C3E;
+    font-size: 40rpx;
+    margin-left: 15rpx;
+}
+.integral .over-btn{
+    color: #fff;
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    padding: 8rpx 30rpx;
+    border-radius: 25px;
+    float: right;
+    background: #B0B0B0;    
+}
+.integral .int-btn{
+    color: #fff;
+    margin-left: 30rpx;
+    font-size: 30rpx;
+    padding: 8rpx 30rpx;
+    border-radius: 25px;
+    float: right;
+    background: #F0552D;    
+}
+.integral view{
+    width:30%;
+}
+.integral navigator{
+    width: 40%;
+}
+
+
+.orders-box{
+    font-size: 28rpx;
+    margin:10px 20px 0 20px;
+    box-shadow: 3px 2px 3px #D8DADD;
+    border-radius: 15rpx;
+    background-color: #fff;
+}
+.orders{
+    height: 160rpx;
+    text-align: center;
+}
+.order-status{
+   display: inline-block;
+   width: 25%
+}
+.order-status image{
+    width: 34px;
+    height: 30px;    
+    display: block;
+    margin: 1px auto;
+    padding: 30rpx 0 10rpx 0;
+}
+.order-status text{
+   color: #B7B7BE;
+   margin-top: 15rpx;
+   padding-left: 40rpx;
+}
+.order-status .num{
+    background: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2rpx 10rpx;
+    position: relative;
+    top: -41px;
+    left: -16px;
+    font-size: 24rpx;
+}
+.orders navigator{
+    display: initial;
+}
+.edition{
+   text-align: center;
+   margin-top: 15rpx;
+}
+.edition text{
+    color: #D1D2D2;
+    font-size: 28rpx;
+}
+
+
+.sign_out{
+    border-radius: 15rpx;
+    box-shadow: 3px 2px 3px #D8DADD;
+    color: black;
+    line-height: 90rpx;
+    font-size: 28rpx;
+    background: #fff;
+    margin:15px 20px 0px 20px 
+}
+.sign_out view{
+    position: relative;
+    height: 90rpx;
+    border-bottom: 1rpx solid #e9e9e9;
+    text-align: center;
+}

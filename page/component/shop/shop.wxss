@@ -1,0 +1,52 @@
+@import '../../common/common.wxss';
+.shop-list{
+  height: 200rpx;
+  background: #fff;
+  margin: 20rpx;
+  border-radius: 15rpx;
+  display: flex;
+  align-items: center;  
+  padding: 0rpx 10px;
+}
+.shop-list image{
+  height: 145rpx;
+  width: 145rpx;
+  border-radius: 12rpx;
+  box-shadow: 1px 2px 1px #e7e7e7;
+}
+.shop-txt{
+  display: inline-block;
+  width: 78%;
+  margin-left: 15rpx;
+}
+.shop-txt .shop-name{
+  font-size: 30rpx;
+}
+.shop-txt .shop-entry{
+  float: right;
+  color: #E70314;
+  font-size: 28rpx;
+  border: 1px solid #E70314;
+  padding: 0rpx 28rpx;
+  border-radius: 25px;
+}
+.shop-txt .shop-content{
+  display: block;
+  color: #B2B2B2;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  margin-top: 20rpx;  
+}
+.shop_text {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center;
+  color: #B2B2B2;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  margin-top: 20rpx;
+}

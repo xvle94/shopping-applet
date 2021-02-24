@@ -1,0 +1,65 @@
+<view class="main">
+    <view class="banner">
+        <image wx:if="{{shop.details == null}}" src="https://erbu.fyitgroup.net/appletImg/image/product/bg.png" class="banner-bg"></image>
+        <image wx:if="{{shop.details != null}}"  src="{{imgheader + shop.details}}" class="banner-bg"></image>
+        <view class="banner-content">
+            <view class="search">
+                <navigator url="../search/search?shopsId={{id}}">
+                    <view class="search-text">
+                        <icon class="weui-icon-search_in-box search-icon" type="search" size="14"></icon>
+                        搜索你想要的商品
+                    </view>
+                </navigator>
+            </view>
+            <!-- <image src="{{imgheader}}{{shop.logoUrl}}}" class="shop-head"></image> -->
+            <text class="shop-name">{{shop.name}}</text>
+        </view>
+    </view>
+
+    <view class="shop-detail">
+        <view class="detail-top">
+            <image class="position" src="https://erbu.fyitgroup.net/appletImg/image/index/position.png"></image>
+            <text class="ads-text"wx:if="{{shop.detailedAddress == null}}">暂无详细地址</text>
+            <text class="ads-text"wx:if="{{shop.detailedAddress != null}}">{{shop.detailedAddress}}</text>
+            <view class="call-img" catchtap='call'>
+                <image class="call-img" src="https://erbu.fyitgroup.net/appletImg/image/product/call.png" catchtap='call'></image>
+            </view> 
+        </view>
+        <view class="detail-down">
+            <text class ="shop_text" wx:if="{{shop.introduce != null}}">{{shop.introduce}}</text>
+             <text class ="shop_text" wx:if="{{shop.introduce == null}}">这个店家太懒了还没有详细介绍...</text>
+        </view>
+    </view>
+
+
+    <view class="list-box">
+        <view class="categoty-title">
+            <block wx:for="{{category}}" data-index="index">
+            <view data-id="{{item.id}}"
+                bindtap="switchTab"
+                data-index="{{index}}"
+                class="cate-list {{curIndex === index?'on':''}}">{{item.name}}</view>
+            </block>
+        </view>
+        <view class="newest">
+            <view class="newest-box" wx:if="{{product.length>0}}">
+                <view class="newest-list" wx:for="{{product}}" wx:key="{{index}}">
+                <navigator url="../details/details?id={{item.id}}">
+                    <view class="newest-up">
+                    <image class="product-img" src="{{imgheader}}{{item.thumbnail}}"></image>
+                    </view>
+                    <view class="newest-down">
+                    <view class="newest-text">
+                        <text class="newest-pname block">{{item.goodsName}}</text>
+                        <text id="unit">￥</text><text class="newest-price">{{item.newMoney}}</text>
+                    </view>
+                    </view>
+                </navigator>
+                </view>
+            </view>
+            <view wx:else class="text-center">
+              <image src="/image/null-pro.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,39 @@
+<view class="main">
+	<view wx:if="{{showInfo}}">
+		<view class="pay-content">
+			<view>
+				<text class="name">订单编号:</text>
+				<text class="text-left" wx:if="{{orderInfoData.sub_order_no!=null}}">{{orderInfoData.sub_order_no}}</text>
+				<text class="text-left" wx:else></text>
+			</view>
+			<view>
+				<text class="name">联系人:</text>
+        <text class="text-left" wx:if="{{orderInfoData.contact_name!=null}}">{{orderInfoData.contact_name}}</text>
+				<text class="text-left" wx:else></text>
+			</view>
+			<view>
+				<text class="name">联系电话:</text>
+        <text class="text-left" wx:if="{{orderInfoData.contact_phone!=null}}">{{orderInfoData.contact_phone}}</text>
+				<text class="text-left" wx:else></text>
+			</view>
+      <view>
+				<text class="name">提货码:</text>
+        <text class="text-left">{{orderInfoData.delivery_code}}</text>
+			</view>
+       <view>
+				<text class="name">订单状态:</text>
+        <text class="text-left">{{orderInfoData.text}}</text>
+			</view>
+			<view class='btns'>
+        <button type="default" size="mini" plain="true" bindtap="cancel">取消</button>
+
+				<button wx:if="{{orderInfoData.status === 'os_002'}}" type="primary" size="mini" plain="true" loading="{{showLoadding}}" bindtap="confirmExtract">提货</button>
+        <button wx:else type="default" size="mini" plain="true">提货</button>
+
+			</view>
+		</view>
+	</view>
+	<view wx:elif="{{!showInfo}}">
+		<view class="pay-content" style="text-align:center">暂无数据</view>
+	</view>
+</view>

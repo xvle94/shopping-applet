@@ -1,0 +1,103 @@
+{
+  "pages": [
+    "page/component/index",
+    "page/login/login",
+    "page/component/turntable/turntable",
+    "page/component/category/category",
+    "page/component/cart/cart",
+    "page/component/user/user",
+    "page/component/address/address",
+    "page/component/orders/orders",
+    "page/component/details/details",
+    "page/component/list/list",
+    "page/component/search/search",
+    "page/component/mall/mall",
+    "page/component/active/active",
+    "page/component/msg/msg",
+    "page/component/shop/shop",
+    "page/component/activeDetail/activeDetail",
+    "page/component/integral/integral",
+    "page/component/inteDetail/inteDetail",
+    "page/component/order2/order2",
+    "page/component/addAddress/addAddress",
+    "page/component/editAddress/editAddress",
+    "page/component/parking/parking",
+    "page/component/parkPay/parkPay",
+    "page/component/parkHistory/parkHistory",
+    "page/component/default/default",
+    "page/component/point/point",
+    "page/component/parking2/parking2",
+    "page/component/poster/poster",
+    "page/component/turntable2/turntable2",
+    "page/component/turntable2/roulette/roulette",
+    "page/component/squeegee/squeegee",
+    "page/component/extract/extract",
+    "page/component/modelView/modelView",
+    "page/component/details2/details2",
+    "page/component/raffleList/raffleList",
+    "page/component/lotteryHistory/lotteryHistory",
+    "page/component/drawQrCode/drawQrCode",
+    "page/component/drawConvert/drawConvert"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "绿地通",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#eeeeee",
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark",
+    "onReachBottomDistance": 50
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx6945d1bda68d7993",
+    "wxc3c014076ad568e9"
+  ],
+  
+  "tabBar": {
+    "color": "#b7b7b7",
+    "selectedColor": "#d81e06",
+    "borderStyle": "white",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "page/component/index",
+        "iconPath": "image/icon/index.png",
+        "selectedIconPath": "image/icon/index(1).png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "page/component/mall/mall",
+        "iconPath": "image/icon/mall.png",
+        "selectedIconPath": "image/icon/mall(1).png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "page/component/active/active",
+        "iconPath": "image/icon/active.png",
+        "selectedIconPath": "image/icon/active(1).png",
+        "text": "活动"
+      },
+      {
+        "pagePath": "page/component/cart/cart",
+        "iconPath": "image/icon/cart.png",
+        "selectedIconPath": "image/icon/cart(1).png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "page/component/user/user",
+        "iconPath": "image/icon/user.png",
+        "selectedIconPath": "image/icon/user(1).png",
+        "text": "我的"
+      }
+    ]
+  },
+  
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

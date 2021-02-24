@@ -1,0 +1,4 @@
+<!--page/component/default/default.wxml-->
+<view class="main">
+    <image src="/image/defult.png"></image>
+</view>

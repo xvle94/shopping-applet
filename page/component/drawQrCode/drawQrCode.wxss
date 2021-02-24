@@ -1,0 +1,17 @@
+/* page/component/drawQrCode/drawQrCode.wxss */
+page{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  background: #fff;
+}
+
+.imagesize{
+  /* display:flex;                    
+  justify-content: center;          */
+  padding-top: 230rpx;
+}
+.imagesize image{
+  width: 400rpx;    
+  height: 400rpx; 
+}

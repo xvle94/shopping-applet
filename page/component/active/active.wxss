@@ -1,0 +1,23 @@
+/* page/component/active/active.wxss */
+.active-list{
+  margin: 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 3px 4px 3px #DBDBDB;
+}
+.active-list image{
+  width: 100%;
+  border-radius: 12rpx 12rpx 0 0;
+  height: 320rpx;
+}
+.active-list text{
+  line-height: 38px;
+  padding-left: 10px;
+  font-size: 30rpx;
+}
+.pic{
+  opacity: 0;
+  transition: opacity 0.3s linear 0.3s;
+}
+.Action{
+  opacity: 1;
+ }

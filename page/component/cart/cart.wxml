@@ -1,0 +1,52 @@
+<view class="main">
+    <view wx:if="{{hasList}}">
+        <view class="cart-box" wx:if="{{carts.length!=0}}">
+            <view class="cart-list" wx:for="{{carts}}" wx:for-index="index">
+                <view class="shopName">
+                     <checkbox-group  bindchange="selectList" data-item='{{item.productList}}' data-shopId="{{item.shopId}}" data-index="{{index}}">
+                        <checkbox checked="{{item.shopCheckBox}}"/>
+                     </checkbox-group>
+                     <!--  bindtap="goShopInfo" -->
+                    <text data-shopid="{{item.shopId}}">{{item.shopName}} </text>
+                    <!-- <text class="arrow-icon">></text> -->
+
+                </view>
+                <view class="productlist" wx:for="{{item.productList}}">
+                    <checkbox-group  bindchange="checkboxChange" data-id="{{item.id}}" data-item="{{item}}">
+                       <checkbox checked="{{item.isCheck}}"/>
+                    </checkbox-group>
+
+                    <navigator url="../details/details?id={{item.commodityId}}"><image class="cart-thumb" src="https://erbu.fyitgroup.net/appletImg/upload//{{item.thumbnail}}"></image></navigator>
+                    <view class="p-detail">
+                        <text class="cart-pro-name">{{item.goodsName}}</text>
+                        <text class="cart-pro-price">￥{{item.newMoney}}</text>
+                        <view class="cart-count-box">
+                            <text class="cart-count-down" bindtap="minusCount" data-cid="{{item.id}}" data-index="{{index}}" data-price="{{item.newMoney}}">-</text>
+                            <text class="cart-count-num">{{item.commodityNumber}}</text>
+                            <text class="cart-count-add" bindtap="addToCart" data-num="{{item.commodityNumber}}" data-id="{{item.commodityId}}" data-index="{{index}}" data-price="{{item.newMoney}}">+</text>
+                        </view>
+                    </view>
+                </view>
+
+            </view>
+        </view>
+        <view class="cart-no-data" wx:else>
+            <image src="/image/cart.png"></image>
+            <text>购物车是空的哦~</text>
+        </view>
+        <view class="cart-footer">
+             <checkbox-group bindchange="selectAll"> <checkbox checked='{{selectAllStatus}}'/> </checkbox-group>
+            <text class="select-all-title">全选</text>
+
+            <navigator><text bindtap="addOrder" class="cart-total-count">结算<text></text></text></navigator>
+            <text class="cart-total-price"> ￥{{totalPrice}}</text><text class="cart-total-title">合计：</text>
+            
+        </view>
+    </view>
+    
+    <view wx:else>
+        <view class="cart-no-data">购物车是空的哦~</view>
+    </view>
+</view>
+
+

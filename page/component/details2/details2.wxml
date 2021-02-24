@@ -1,0 +1,21 @@
+<view class="main">
+    <view class="goods-box">
+        <image src="{{imgheader}}{{goods.thumbnail}}" class="goods-thumb {{scaleCart?'on':''}}"></image>
+        <text class="g-detail">{{goods.goodsName}}</text>
+        <view><text class="priceName">所需积分: </text><text class="g-price"> {{goods.buyIntegral}}</text></view>
+        <view><text class="priceName">剩余个数: </text><text class="g-price"> {{goods.surplus}}</text></view>
+    </view>
+    <view class="goods-tab-box">
+       <text class="title">图文详情</text>
+       <text wx:if="{{goods.introduce==null}}"></text>
+       <text class="detail" wx:else>{{goods.introduce}}</text> 
+       <view wx:for="{{detailMap}}">
+        <image mode="widthFix" src="{{imgheader}}{{item}}"/>
+       </view>
+    </view>
+    <view class="goods-operation">
+        <navigator url="/page/component/point/point?id={{goods.id}}">
+            <text class="btn-buy" bindtap="addOrder" data-pid="{{goods.id}}" data-sid="{{goods.shopsId}}">立即兑换</text>
+        </navigator>
+    </view>
+</view>

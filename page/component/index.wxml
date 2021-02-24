@@ -1,0 +1,141 @@
+<view class="main">
+    <view class="drop-down">
+        <image src="https://erbu.fyitgroup.net/appletImg/image/index/position.png"></image>
+        <!-- <text>周浦缤纷广场</text> -->
+        <view class='list-msg2' bindtap='bindShowMsg'>
+          <text>{{tihuoWay}}</text>
+          <image style='height:20rpx;width:20rpx;' src='https://erbu.fyitgroup.net/appletImg/image/select.png'></image>
+        </view>
+        <view class="select_box" wx:if="{{select}}">
+          <view class="select_one" wx:for-items="{{queryList}}" wx:for-item="item" bindtap="mySelect" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+        </view>
+         <navigator url="msg/msg"> <image src="https://erbu.fyitgroup.net/appletIm/image/index/msg2.png" class="float-right"></image></navigator>
+    </view>
+    <view class="adv-img4">
+      <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{homeBannerList}}" wx:key="id">
+            <swiper-item bindtap="jumpToType" data-item='{{item}}'>
+                <image src="{{imgheader}}{{item.bannerUrl}}" class="slide-image" width="100%"/>
+            </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <!-- <view class='wp notice'>
+        <image src="https://erbu.fyitgroup.net/appletImg/image/index/notic.png"></image>
+        <view class='box'>
+          <view class='flex-box' style='left: {{posLeft2}}px'>
+            <view id='txt3' class='txt'>{{title}}</view>
+            <view class='txt' style='margin-left: {{marginLeft}}px'>{{title}}：{{outline}}</view>
+          </view>
+        </view>
+    </view> -->
+
+    <view class="marquee_container " style="font-size:32rpx;" >
+      <!-- <image src="https://erbu.fyitgroup.net/appletImg/image/index/notic.png"></image> -->
+      <image src="/image/noticTxt.png"></image>
+      <view class='marquee_text' style='--marqueeWidth--:{{-broadcast_arr.width_mal}}px;--speed--:{{broadcast_arr.time}}s;width:{{broadcast_arr.width_mal}}px;display:inline-block;'>
+        <block wx:for="{{noticeList}}" wx:key="index">
+          <view style='margin-left:{{index!=0?item.starspos*2:0}}rpx;' class="" bindtap="jumpToType" data-item='{{item}}'>
+            {{item.title}}:{{item.outline}}
+          </view>
+        </block>
+      </view>
+    </view>
+        
+   <view class="catal flex-wrp">
+      <view class="flex-item" wx:for="{{homeIconList}}" wx:key="{{id}}">
+        <view bindtap='jumpToType' data-item='{{item}}'>
+          <image src="{{imgheader}}{{item.imgUrl}}" class="catal_img"/>
+          <text class="catal_text">{{item.title}}</text>
+         </view>
+      </view>
+   </view>
+
+
+    <view class="adv-img" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <view class="main-box">
+          <swiper style="height:100%" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+            <block wx:for="{{posterList}}" wx:key="id">
+                <swiper-item bindtap="jumpToType" data-item='{{item}}'>
+                    <image src="{{imgheader}}{{item.imgUrl}}" class="slide-image" width="100%" style="width:100%;height:200rpx" />
+                </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <view class="main-box">
+            <navigator bindtap="goPark">
+              <image src="https://erbu.fyitgroup.net/appletImg/img/park.png" ></image>
+            </navigator>
+            <!-- <navigator url="/page/login/login" wx:else>
+              <image  src="https://erbu.fyitgroup.net/appletImg/img/park.png" ></image>
+            </navigator> -->
+            <navigator bindtap='getScancode'>
+              <image src="https://erbu.fyitgroup.net/appletImg/img/menjin.png" ></image>
+            </navigator>
+        </view>
+    </view>
+
+    <view class="adv-img3" wx:if="{{goodsRecommendList.length>0}}">
+      <navigator wx:for="{{goodsRecommendList}}" wx:key="id" url="activeDetail/activeDetail?id={{item.id}}">
+          <image bindtap='jumpToType' data-item="{{item}}" src="{{imgheader}}{{item.imgUrl}}"></image>
+      </navigator>
+    </view>
+
+    <view class="adv-img4" wx:if="{{bottomBannerList.length>0}}">
+      <swiper autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{bottomBannerList}}" wx:key="id">
+            <swiper-item bindtap="jumpToType" data-item='{{item}}'>
+                <image src="{{imgheader}}{{item.bannerUrl}}" class="slide-image" width="100%" />
+            </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    
+
+    <!-- <view class="adv-img4">
+      <view class=""  wx:for="{{bottomBannerList}}" wx:key="id">
+        <navigator url="activeDetail/activeDetail?id={{item.id}}">
+            <image src="{{imgheader}}{{item.bannerUrl}}"></image>
+        </navigator>
+      </view>
+    </view> -->
+
+    <view class="selected">
+      <view class="select-title">
+        <!-- <text class="text-left">线上商城 好货不断</text> -->
+        <text class="text-left">积分商城 好货不断</text>
+        <text class="float-right" bindtap="goMall">查看更多></text>
+      </view>
+      <view class="select-top">
+        <!-- <view class="select-top-small" wx:for="{{commodity}}" wx:key="id">
+            <navigator url="details/details?id={{item.id}}">
+                <image src="{{imgheader}}{{item.thumbnail}}"></image>
+            </navigator>
+            <text>活动价</text>
+            <text id="unit">   ￥</text><text>{{item.newMoney}}</text>
+        </view> -->
+        <view class="select-top-small" wx:for="{{integralCommodity}}" wx:key="id">
+            <navigator url="details2/details2?id={{item.id}}">
+              <image src="{{imgheader}}{{item.thumbnail}}"></image>
+              <text class="inter-name">{{item.goodsName}}</text>
+              <text class="inter-price">所需积分:{{item.buyIntegral}}</text>
+            </navigator>
+        </view>
+      </view>
+    </view>
+
+    <!-- <view class="newest">
+        <view class="select-title">
+          <text class="text-left">最新活动</text>
+          <text class="float-right" bindtap="goActive">查看更多></text>
+        </view>
+        <view class="newest-box">
+          <view class="newest-list"  wx:for="{{homeNewActivityList}}" wx:key="id">
+            <navigator url="activeDetail/activeDetail?id={{item.id}}">
+                <image src="{{imgheader}}{{item.imgUrl}}"></image>
+            </navigator>
+          </view>
+        </view>
+    </view> -->
+</view>

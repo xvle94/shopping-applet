@@ -1,0 +1,45 @@
+<view class="main">
+  <view class="i-top">
+      <image src="https://erbu.fyitgroup.net/appletImg/bg.png"></image>
+      <view class="top-text">
+        <text class="title">积分账户</text>
+        <text class="num"> {{totalScore}} </text>
+        <navigator url="/page/component/inteDetail/inteDetail"><text class="detail">查看明细</text></navigator>
+      </view>
+  </view>
+  <view class="p-view">
+     <view class="drop-down">
+        <image src="https://erbu.fyitgroup.net/appletImg/image/index/position.png"></image>
+        <!-- <text>周浦缤纷广场</text> -->
+        <view class='list-msg2' bindtap='bindShowMsg'>
+          <text>{{tihuoWay}}</text>
+          <image style='height:20rpx;width:20rpx;' src='https://erbu.fyitgroup.net/appletImg/image/select.png'></image>
+        </view>
+        <view class="select_box" wx:if="{{select}}">
+          <view class="select_one" wx:for-items="{{queryList}}" wx:for-item="item" bindtap="mySelect" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+        </view>
+    </view>
+  </view>
+  <view class="i-content">
+    <view class="pro-head">
+      <image src="https://erbu.fyitgroup.net/appletImg/inte1.png"></image>
+      <view class="title">热门兑换</view>
+      <image src="https://erbu.fyitgroup.net/appletImg/inte2.png"></image>
+    </view>
+   
+      <view class="pro-box">
+          <view class="pro-list" wx:for="{{product}}" wx:key="index">
+            <navigator bindtap="goIntegralInfo" data-id="{{item.id}}">
+              <image src="{{'https://erbu.fyitgroup.net/appletImg/upload/'+item.thumbnail}}" lazy-load="true" class="pic"></image>
+              <text class="pro-name">{{item.goodsName}}</text>
+              <view class="pro-price">
+                  <image class="pro-icon" src="https://erbu.fyitgroup.net/appletImg/icon.png"></image>
+                  <text class="pro-integral">{{item.buyIntegral}}</text><text class="pro-num">{{item.surplus}}份</text>
+              </view>
+            </navigator>
+            <navigator catchtap="goExchange" data-index="{{item.id}}" class="pro-btn">立即兑换</navigator>
+          </view>
+      </view>
+   
+  </view>
+</view>

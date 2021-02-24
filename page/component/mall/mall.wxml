@@ -1,0 +1,89 @@
+<view class="main">
+    <swiper indicator-dots="true" autoplay="true" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{imgUrls}}" wx:key="{{id}}">
+            <swiper-item bindtap='jumpToType' data-item='{{item}}'>
+                <image src="{{imgheader}}{{item.bannerUrl}}" class="slide-image" width="100%"/>
+            </swiper-item>
+        </block>
+    </swiper>
+   
+   <view class="catal flex-wrp">
+      <view class="flex-item">
+        <navigator url="../integral/integral">
+          <image src="https://erbu.fyitgroup.net/appletImg/image/mall/mall-icon1.png" class="catal_img"/>
+          <text class="catal_text">积分商品</text>
+         </navigator>
+      </view>
+      <view class="flex-item">
+        <navigator bindtap="goPark">
+          <image src="https://erbu.fyitgroup.net/appletImg/image/mall/mall-icon2.png" class="catal_img"/>
+          <text class="catal_text">停车缴费</text>
+        </navigator>
+      </view>
+      <view class="flex-item">
+        <navigator url="../category/category">
+          <image src="https://erbu.fyitgroup.net/appletImg/image/mall/mall-icon3.png" class="catal_img"/>
+          <text class="catal_text">必买单品</text>
+        </navigator>
+      </view>
+      <view class="flex-item"> 
+        <navigator url="../category/category">
+          <image src="https://erbu.fyitgroup.net/appletImg/image/mall/mall-icon4.png" class="catal_img"/>
+          <text class="catal_text">所有商品</text>
+        </navigator>
+      </view>
+      <!-- <view class="flex-item"> 
+        <navigator url="../shop/shop">
+          <image src="https://erbu.fyitgroup.net/appletImg/image/mall/mall-icon5.png" class="catal_img"/>
+          <text class="catal_text">所有商铺</text>
+        </navigator>
+      </view> -->
+   </view>
+
+    <!-- <view class="selected">
+        <view class="select-bottom" wx:for="{{posterList}}">
+            <navigator url="list/list">
+                <image src="{{imgheader}}{{item.imgUrl}}"></image>
+            </navigator>
+        </view>
+    </view> -->
+
+    <view class="newest">
+        <view class="newest-title">
+          <!-- <text class="active">数码科技</text>
+          <text>酒水美食</text>
+          <text>百货商品</text>
+          <text>舌尖美食</text> -->
+           <!-- <view wx:for="{{category}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}"
+                bindtap="switchTab"
+                class="cate-list {{curIndex === index?'on':''}}">{{item.name}}</view> -->
+
+
+          <swiper duration="500" display-multiple-items="{{category.length<4?category.length:4}}" class="cate-list">
+            <block wx:for="{{category}}">
+              <swiper-item>
+                <view catchtap="switchTab" data-id="{{item.id}}" data-index="{{index}}" class="cate-list {{curIndex == index?'onSelect':''}}">{{item.name}}</view>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <view class="newest-box" wx:if="{{product.length>0}}">
+            <view class="newest-list" wx:for="{{product}}" wx:key="{{id}}">
+              <navigator url="../details/details?id={{item.id}}">
+                <view class="newest-up">
+                  <image class="product-img" src="{{imgheader}}{{item.thumbnail}}" lazy-load="true"></image>
+                </view>
+                <view class="newest-down">
+                  <view class="newest-text">
+                    <text class="newest-pname block">{{item.goodsName}}</text>
+                    <text id="unit">￥</text><text class="newest-price">{{item.newMoney}}</text>
+                  </view>
+                </view>
+              </navigator>
+            </view>
+        </view>
+        <view wx:else class="text-center">
+            <image src="/image/null-pro.png"></image>
+        </view>
+    </view>
+</view>

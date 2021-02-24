@@ -1,0 +1,14 @@
+<view class="container" style="background:url('{{imgheader}}{{bgImg}}') no-repeat center center/cover">
+  <!-- <roulette options="{{rouletteData}}" angel="{{angel}}" bind:getAngel="getAngel" bind:getPrize="getPrize" /> -->
+  <view class="canvas">
+    <canvas canvas-id="roulette" style=" width: 600rpx; height: 600rpx;" angel="{{angel}}" bind:getAngel="getAngel" bind:getPrize="getPrize">
+    </canvas>
+    <cover-image src="../../../image/start.png" class="start" bindtap='rollStart' />
+    <view class="integral">剩余积分：{{integral}}</view>
+  </view>
+  <view class="rule">
+    <text>活动规则</text>
+    <rich-text class="richText" nodes="{{drawIntroduceString}}"></rich-text>
+  </view>
+  <navigator class="history" url="../lotteryHistory/lotteryHistory">抽奖历史 ></navigator>
+</view>

@@ -1,0 +1,12 @@
+<view class="main">
+    <view wx:for="{{msg}}" wx:key="{{index}}" class="msg-list">
+      <image src="https://erbu.fyitgroup.net/appletImg/image/msg-icon.png"></image>
+      <view class="msg-txt">
+        <!-- <view class="txt-title"> -->
+          <text class="txt-title">通知消息</text><text class="txt-time">{{item.time}}</text>
+        <!-- </view> -->
+        
+        <text class="txt-content">{{item.content}}</text>
+      </view>
+    </view>
+</view>

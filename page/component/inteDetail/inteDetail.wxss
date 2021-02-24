@@ -1,0 +1,50 @@
+@import '../../common/common.wxss';
+.main{
+  background: #fff;
+}
+.box-list{
+  height: 150rpx;
+  background: #fff;
+  margin: 0px 35rpx 10rpx 35rpx;
+  border-bottom: 1px dashed #D2D2D2;
+  display: flex;
+  align-items: center;
+}
+.box-left{
+  display: inline-block;
+  width: 50%;
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.box-left text{
+  display: block;
+  word-break:keep-all;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis; 
+}
+.box-left .time{
+  color:#D2D2D2 ;
+  margin-top: 19rpx;
+}
+.box-left{
+  width: 75%;
+}
+.box-right{
+  width: 25%;
+  text-align: right;
+  display: inline-block;
+}
+.null{
+  background:#F0F2F5;
+  text-align: center;
+  padding-top:50rpx ;
+}
+.box-right .type{
+  margin-top: 19rpx;
+}
+.box-right text{
+  display: block;
+  font-size: 28rpx;
+}

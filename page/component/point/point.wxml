@@ -1,0 +1,42 @@
+<!--page/component/point/point.wxml-->
+<view class="main">
+    <view class="orders-box">
+        <view class="orders-list">
+            <view class="orders-head" >
+                <text class="shopName">{{pointData.goodsName}}</text>
+                <!-- <text class="orderNum">商品编号:{{pointData.goodsCode}}</text> -->
+            </view>
+            <view class="orders-content">
+                <image class="orders-thumb" src="{{imgheader}}{{pointData.thumbnail}}"></image>
+                <view class="orders-pro-name">{{pointData.goodsName}}</view>
+                <view class="orders-pro-detail">
+                    <text class="orders-pro-price">{{pointData.buyIntegral}}积分</text>
+                    <text class="orders-count-num">×1</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="switch">
+        <text>配送方式</text>
+        <text class="btn-switch on" data-index="0">到店自取</text>
+    </view>
+
+    <!-- <view class="self-taking">
+        <view class="s-people">
+            <text>联系人</text>   
+            <input class="weui-input" name="contactName" bindinput='contactName' auto-focus placeholder="请输入联系人姓名"/>
+        </view>
+        <view class="s-phone">
+            <text>联系电话</text>
+            <input class="weui-input" name="contactPhone" bindinput='contactPhone' auto-focus placeholder="请输入联系人电话"/>
+        </view>
+    </view> -->
+
+
+    <view class="orders-footer">
+        <view class="orders-footer-total">总计：<text class="total-price">{{pointData.buyIntegral}}</text></view>
+        <view class="orders-footer-btn" wx:if="{{status}}" bindtap="doPay">立即兑换</view>
+        <view class="orders-footer-disable" wx:else>立即兑换</view>
+    </view>
+</view>

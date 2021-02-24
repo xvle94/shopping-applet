@@ -1,0 +1,35 @@
+<!--page/component/parkPay/parkPay.wxml-->
+<view class="main">
+  <view class="pay-head">
+    <image src="{{userInfo.avatar}}"></image>
+    <view class="info">
+      <text>{{userInfo.nickName}}</text>
+      <text>手机号:{{userInfo.phone}}</text>
+      <text>积分:{{userInfo.totalScore}}</text>
+    </view>
+  </view>
+
+  <view class="pay-content">
+       <view> <text class="name">车牌号:</text> <text class="text-left">{{infoData.carNum}}</text></view>
+       <view><text class="name">入场时间:</text> <text class="text-left">{{infoData.beginTime}}</text></view>
+       <view><text class="name">停车时长:</text> <text class="text-left">{{infoData.stopTime}}</text></view>
+       <!-- <view><text class="name">停车收费:</text> <text class="text-left">{{infoData.stopMoney}}元</text></view> -->
+       <view><text class="name">应缴费:</text> <text class="text-left">{{infoData.payMoney}}元</text></view>
+  </view>
+
+   <view class="pay-footer">
+    <text>支付方式</text>
+    <view class="section section_gap">
+      <radio-group class="radio-group" bindchange="radioChange">
+          <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.id}}" checked="{{item.checked}}" color="#D81E06">
+              <text>{{item.title}}</text>
+          </radio>
+      </radio-group>
+    </view>
+    <view class="payment">
+      <text>缴费金额：</text>
+      <text class="price">{{infoData.payMoney}}元</text>
+    </view> 
+    <button bindtap="payMoney">立即缴费</button>
+  </view>
+</view>

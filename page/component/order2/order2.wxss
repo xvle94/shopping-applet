@@ -1,0 +1,144 @@
+@import '../../common/common.wxss';
+.orders-list{
+  margin: 20rpx;
+  padding: 20rpx;
+  background: #fff;
+  border-radius: 15rpx;
+  height: auto;
+  border-bottom: 1rpx solid #ededed;
+  position: relative;
+}
+.orders-head .shopName{
+  font-size: 30rpx;
+  font-weight: 600;    
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  width: 50%;
+}
+.orderNum{
+  font-size: 27rpx;
+  float: right;
+  color: #C7C7C7;
+  margin-top: 5rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.shopsAddress{
+  font-size: 27rpx;
+  color: #C7C7C7;
+}
+.deliveryCode{
+  color: #E30000;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 50%;
+}
+.orders-thumb{
+  width: 160rpx;
+  height: 160rpx;    
+  border-radius: 12rpx;
+  box-shadow: 2px 2px 4px #E5E4E4;
+}
+.orders-content{
+  display: flex;
+  align-items: center;
+  margin-top: 15rpx;
+}
+.orders-pro-name{
+  display: inline-block;
+  width: 58%;
+  font-size: 28rpx;
+  padding-left: 15rpx;
+}
+.orders-pro-detail{
+  display: inline-block;
+  font-size: 30rpx;
+  margin-left: 40rpx;
+  text-align: right;
+}
+.orders-pro-detail .orders-pro-price{
+  display: block;
+  color: #d81e06;
+}
+.orders-pro-detail .orders-count-num{
+  display: block;
+  color: #C7C7C7;
+}
+.orders-foot{
+  margin-top: 18rpx;
+  margin-bottom: 5rpx;
+}
+.delivery{
+  font-size: 30rpx;
+}
+.delivery text{
+  height: 50rpx;
+  line-height: 50rpx;  
+  font-size: 27rpx;
+}
+.delivery .left{
+  width: 22%;
+  display: inline-block;
+}
+.delivery .d-code{
+  width: 40%;
+}
+.delivery image{
+  width: 64rpx;
+  height: 64rpx;  
+}
+.delivery .code-view{
+  display: flex;
+  align-items: center;
+}
+.code-view navigator{
+  width: 25%;
+}
+.code-view button{
+  height: 50rpx;
+  padding: 0 20rpx;
+  line-height: 50rpx;
+  float: right;
+  color: #E30000;
+  border: 1px solid #E30000;
+}
+.payment{
+  font-size: 30rpx;
+}
+.payment{
+  margin-top: 20rpx;
+}
+.payment .pay-btn{
+  float: right;
+  border: 1px solid #d81e06;
+  color: #d81e06;
+  padding: 2rpx 30rpx;
+  border-radius: 25px;
+  font-size: 30rpx;
+}
+.payment .cancel-btn{
+  float: right;
+  border: 1px solid #B0B0B0;
+  color: #B0B0B0;
+  padding: 2rpx 30rpx;
+  border-radius: 25px;
+  font-size: 30rpx;
+  margin-right: 15rpx;
+}
+.payment .pay-title{
+  font-size: 28rpx;
+}
+.payment .pay-price{
+  font-size: 32rpx;
+}
+.received text{
+  color: #C7C7C7;
+  font-size: 28rpx;
+}
+.payment navigator{
+  display: initial;
+}

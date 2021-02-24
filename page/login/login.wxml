@@ -1,0 +1,26 @@
+<!--pages/list/login.wxml-->
+<view>
+  <navigation-bar title="EgoEnglish" navBackgroundColor="#FEE05C" backVisible="{{false}}" homeVisible="{{false}}"/>
+  <view class="login-container">
+    <view class="login-logo">
+        <image src="https://erbu.fyitgroup.net/appletImg/logo.png" ></image>
+        <text>绿地通</text>
+    </view>
+    <view class="tab-title">
+      <view>
+        <!-- <view bindtap="{{!buttonClicked?'onGotUserInfo':''}}" /> -->
+        <button class="login-btn" wx:if="{{titleShow}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="{{!buttonClicked?'onGotUserInfo':''}}">{{loginTitle}}</button>
+       
+        <!-- <button bindtap="{{!buttonClicked?'onGotUserInfo':''}}" /> -->
+        <!-- <button bindtap="onGotUserInfo" disabled="buttonClicked"/> -->
+
+        <button class="login-btn" wx:if="{{phoneShow}}" lang="zh_CN" open-type='getPhoneNumber'  bindgetphonenumber="getPhoneNumber">{{userPhone}}</button>
+      </view>
+      <navigator bindtap="cancelLogin"  class="cancelLogin">
+        <text>暂不登录</text>
+      </navigator>
+    </view>
+    
+  </view>
+  
+</view>

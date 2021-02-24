@@ -1,0 +1,17 @@
+<!--page/component/inteDetail/inteDetail.wxml-->
+<view class="main" bindtap="getId" style="height: 100%">
+   <view wx:if="{{integral.length > 0}}" class="box-list"  wx:for="{{integral}}">
+      <view class="box-left">
+         <text>{{item.remarks}}</text>
+         <text class="time">{{item.createTime}}</text>
+      </view> 
+      <view class="box-right">
+         <text>{{item.integralValue}}</text>
+         <text class="type" wx:if="{{item.operationTypeValue!=null}}">{{item.operationTypeValue}}</text>
+            <text class="type" wx:else></text>
+      </view>
+   </view>
+   <view wx:if="{{integral.length === 0}}" class="box-list" style="text-align: center">
+   您还没有获得积分哦~
+   </view>
+</view>

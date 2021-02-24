@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "刮刮卡",
+  "disableScroll": true,
+  "usingComponents": {},
+  "enablePullDownRefresh":false
+}

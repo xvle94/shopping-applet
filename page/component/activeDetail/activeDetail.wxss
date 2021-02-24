@@ -1,0 +1,31 @@
+@import '../../common/common.wxss';
+@import "../../../util/wxParse/wxParse.wxss";
+page{
+  background-color: #fff;
+}
+.atv-head image{
+  width: 100%;
+  height: 450rpx;  
+}
+.atv-content{
+  padding: 25rpx;
+}
+.atv-content .atv-title{
+  display: block;
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 15rpx;
+}
+.atv-time,.atv-address{
+  font-size: 28rpx;
+  color: #ACACAC;
+  margin-bottom: 15rpx;
+  display: inline-block;
+}
+.atv-address{
+  float: right;
+}
+.atv-text{
+  font-size: 28rpx;
+  line-height: 52rpx;
+}
